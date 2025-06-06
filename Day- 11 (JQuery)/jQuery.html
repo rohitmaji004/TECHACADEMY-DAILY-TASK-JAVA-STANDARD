@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery task</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body class="body" style="display: flex;flex-direction: column;align-items:center ; gap: 0.5em;">
+<button id="change">Click Me</button>
+<p id="text">Original Text</p>
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+
+<div class="box"  style="padding:10px;">Box 1</div>
+<div class="box"  style="padding:10px;">Box 2</div>
+<div class="box"  style="padding:10px;">Box 3</div>
+
+<button id="clicked">Click me</button>
+
+<p id="hover">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maxime quos numquam. Eveniet illum vitae ipsum repellendus quasi beatae sapiente soluta odio, earum nisi. Iure dolores doloremque eius velit accusantium?</p>
+
+<button id="fadeBtn">Fade Out Image</button>
+<img id="img" src="/assets/fruits/grapes.avif" width="100px"/>
+
+<button id="toggleMenu">Toggle Menu</button>
+<div id="menu" style="background:#ccc; padding:10px; display:none;">This is a menu</div>
+
+<div style="padding:10px;">
+  <span>Child span</span>
+</div>
+
+<div>
+<p>Item 1</p>
+<p id="second">Item 2</p>
+<p>Item 3</p>
+</div>
+
+<div  style="display: flex;flex-direction: column;align-items:center ; gap: 0.3em;">
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est enim eligendi molestiae maxime impedit pariatur alias temporibus. Eligendi iste tempore cumque animi distinctio dignissimos modi sapiente, id atque minima expedita.</p>
+    <button id="hide">Hide paragraph</button>
+    <button id="show">Show paragraph</button>
+</div>
+
+<h3 class="faq">What is jQuery?</h3>
+<p class="answer" style="display:none;">A JavaScript library!</p>
+
+<button id="load">Fetch Product</button>
+<p id="product"></p>
+
+<h3>Name submission to server using post</h3>
+<input type="text" id="name" style="padding: 0.2em 0.2em;">
+<button id="subform">Submit form</button>
+<p id="response"></p>
+
+
+<h3>Name Submission with empty check</h3>
+<input type="text" id="username" style="padding: 0.2em 0.2em;">
+<button id="validate">Submit form</button>
+<p id="submitted"></p>
+
+<h3>Email Submission</h3>
+<input type="email" id="email" style="padding: 0.2em 0.2em;">
+<button id="emvalidate">Submit form</button>
+<p id="Emailsubmitted"></p>
+
+<button id="chngeback">Change Bg</button>
+
+<p id="text">Original Text</p>
+<button id="changeText">Change Text</button>
+
+<input type="text">
+<input type="email">
+
+<table>
+  <tr><td>Row 1</td></tr>
+  <tr><td>Row 2</td></tr>
+  <tr><td>Row 3</td></tr>
+  <tr><td>Row 4</td></tr>
+</table>
+
+<input type="text" id="keyInput">
+
+<div id="colorBox" style="width:100px;height:100px;background:gray;"></div>
+
+<button id="moveBtn" style="position: relative;">Move Me</button>
+
+<ul id="highlight">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+<script>
+//         <!-- Activity 1: Basic jQuery Setup
+// Create an HTML file that includes the jQuery library from a CDN.
+// Write a simple script that displays an alert when the page loads. -->
+    $(document).ready(function(){
+        alert("Page Loads")
+    })
+
+//     <!-- Activity 2: Interactive Button
+// Make a button that, when clicked, changes the text of a paragraph using jQuery. -->
+ $(document).ready(function(){
+    $('#change').click(function(){
+        $('#text').text("The Text has changed now")
+    })
+ })
+
+//  2. Selectors in jQuery
+// Activity 1: Highlight Elements
+// Select all <p> tags on a webpage and change their font color to blue using jQuery.
+
+ $(document).ready(function(){
+        $('p').css("color", "blue")
+ })
+
+// Activity 2: Class Selector Manipulation
+// Create three <div> elements with a class of box. Change their background color using jQuery.
+  $(document).ready(function(){
+        $('.box').css("background-color", "#d2d2d2")
+ })
+
+// 3. Event Handling in jQuery
+// Activity 1: Click Event
+// Create a button that displays an alert when clicked.
+ $(document).ready(function(){
+    $('#clicked').click(function(){
+       alert("Button is clicked")
+    })
+ })
+
+// Activity 2: Mouse Hover Effect
+// Change the text of a paragraph when the mouse hovers over it.
+$(document).ready(function(){
+    $('#hover').hover(function(){
+       $(this).text("hovering!");
+    })
+ })
+// 4. Animations in jQuery
+// Activity 1: Fade Effect
+// Add a button that fades out an image when clicked.
+
+  $(document).ready(function() {
+    $("#fadeBtn").click(function() {
+      $("#img").fadeOut();
+    });
+  });
+
+// Activity 2: Slide Effect
+// Create a collapsible menu that slides up and down using jQuery.
+  $(document).ready(function() {
+    $("#toggleMenu").click(function() {
+      $("#menu").slideToggle();
+    });
+  });
+
+
+//   5. jQuery Traversing (Navigating the DOM)
+// Activity 1: Parent and Child Selection
+// Write a script to select the parent element of a <span> and change its background color.
+
+ $(document).ready(function() {
+    $("span").parent().css("background-color", "pink");
+  });
+
+// Activity 2: Sibling Navigation
+// Select the next sibling of an element and make it bold using jQuery.
+  $(document).ready(function() {
+    $("#second").next().css("font-weight", "bold");
+  });
+
+
+//   6. jQuery Effects (Show, Hide, Toggle)
+// Activity 1: Show and Hide Effect
+// Create a button that hides a paragraph when clicked and another button that shows it again.
+  $(document).ready(function() {
+    $("#hide").click(function() {
+      $("#para").hide();
+    });
+        $("#show").click(function() {
+      $("#para").show();
+    });
+  });
+
+
+// Activity 2: Toggle Effect
+// Build a FAQ section where clicking on a question reveals or hides its answer.
+  $(document).ready(function() {
+    $(".faq").click(function() {
+    $('.answer').slideToggle();
+    });
+  });
+
+
+//   7. jQuery AJAX (Asynchronous Data Handling)
+// Activity 1: Fetch Data from a Server
+// Use $.get() to fetch data from a public API and display it on a webpage.
+  $(document).ready(function() {
+    $("#load").click(function() {
+      $.get( `https://fakestoreapi.com/products`, function(data) {
+      data.forEach(item=>{
+        $('#product').append(`<p style="text-Align:center">${item.title}</p>`);
+      })
+      });
+    });
+  });
+
+
+// Activity 2: Submit Data with AJAX
+// Create a form where users can input their name and send it to a server using $.post().
+ $(document).ready(function() {
+    $("#subform").click(function() {
+        const name = $("#name").val();
+      $.post( `https://jsonplaceholder.typicode.com/posts`,{name: name}, function(data) {
+           $("#response").text("Submitted: " + data.name);
+      });
+    });
+  });
+// 8. jQuery Form Validation
+// Activity 1: Required Field Check
+// Implement form validation to check if an input field is empty before submission.
+ $(document).ready(function() {
+    $("#validate").click(function() {
+     const name = $("#username").val();
+     if(name == ''){
+     alert("Fill the details")
+     }else{
+        $('#submitted').text('Submitted!!');
+     }
+    });
+  });
+
+
+// Activity 2: Email Format Validation
+// Write a jQuery script that verifies whether the email entered is correctly formatted before allowing submission.
+ $(document).ready(function() {
+    $("#emvalidate").click(function() {
+     const email = $("#email").val();
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (regex.test(email)) {
+        $("#Emailsubmitted").text("Email Submitted");
+      } else {
+        $("#Emailsubmitted").text("Invalid Email");
+      }
+    });
+  });
+
+
+// Activity 3: Changing Page Background
+// Create a button that changes the background color of the webpage when clicked using jQuery.  
+  $(document).ready(function(){
+    $("#chngeback").click(function(){
+       $(".body").css("background-color" , "#252525")
+    })
+  })
+
+//   Activity 4: Changing Text Dynamically
+// Write a script that updates a paragraph's text dynamically when a button is clicked.
+  $(document).ready(function(){
+  $('#changeText').click(function() {
+    $('#text').text('Text updated dynamically!');
+  });
+  })
+// Activity 3: Selecting Elements by Attribute
+// Use jQuery to select all <input> elements and apply a border to them.
+  $(document).ready(function(){
+ $('input').css('border', '2px solid red');
+  })
+//  Activity 4: Selecting Odd and Even Rows in a Table
+// Write a script to change the background color of odd and even rows in a table.
+  $(document).ready(function(){
+ $('tr:odd').css('background-color', '#f2f2f2' , "padding" , "0.4em 0.4em");
+  $('tr:even').css('background-color', '#ddd' , "padding" , "0.4em 0.4em"); 
+  })
+//   3. Event Handling in jQuery
+// Activity 3: Keyboard Event
+// Create an input box where typing a letter triggers an alert showing the entered text.
+  $(document).ready(function(){
+  $('#keyInput').on('keypress', function(e) {
+    alert('You typed: ' + e.key);
+  });
+  })
+
+//   Activity 4: Double Click Action
+// Write a jQuery script that changes the color of a div when double-clicked.
+  $(document).ready(function(){
+  $('#colorBox').dblclick(function() {
+    $(this).css('background-color', '#000');
+  });
+})
+
+// .Activity 4: Animated Button Click
+// Create a button that moves across the screen when clicked.
+  $(document).ready(function(){
+ $('#moveBtn').click(function() {
+    $(this).animate({ left: '250px' , right:'0px' }, 1000);
+  });
+  })
+
+//   5. jQuery Traversing (Navigating the DOM)
+// Activity 3: Finding First and Last Items in a List
+// Use jQuery to select the first and last <li> elements in a list and highlight them.
+    $('li:first').css('color', 'green');
+  $('li:last').css('color', 'red');
+
+//6.jQuery Effects
+//Activity 3: Fade Toggle Effect
+//Objective: Toggle the visibility of an image using a fade effect.
+$(document).ready(function() {
+  $('#fadeToggleBtn').click(function() {
+    $('#fadeImage').fadeToggle('slow');
+  });
+});
+// Activity 4: Progress Bar Animation
+//Objective: Create a progress bar that fills on button click.
+$(document).ready(function() {
+  $('#startProgress').click(function() {
+    $('#progressBar').animate({
+      width: '100%'
+    }, 3000); // 3 seconds
+  });
+});
+
+
+</script>
+
+</body>
+</html>
