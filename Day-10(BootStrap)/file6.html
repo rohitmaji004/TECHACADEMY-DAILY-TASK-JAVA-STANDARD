@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit Button with Hover Effect</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .btn-success.custom-hover:hover {
+      background-color: #000000 !important;
+      color: #fff ;
+      transform: scale(1.75);
+      transition: all 0.3s ease;
+    }
+
+    .btn-success.custom-hover {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5 text-center">
+  <button type="submit" class="btn btn-success custom-hover">
+    Submit
+  </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
