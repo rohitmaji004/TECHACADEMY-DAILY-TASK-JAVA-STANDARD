@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML5 Features and GenC Form</title>
+  <style>
+    body {
+      background-color: burlywood;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    form {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Semantic Elements Example -->
+  <article>
+    <header>
+      <h1>My Blog Post</h1>
+    </header>
+    <section>
+      <p>This is the main content of my blog post.</p>
+    </section>
+    <footer>
+      <p>Posted by Author Name on May 30, 2025</p>
+    </footer>
+  </article>
+
+  <!-- Figure & Figcaption Example -->
+  <figure>
+    <img src="image.jpg" alt="Description of the image" width="300">
+    <figcaption>Caption for the image.</figcaption>
+  </figure>
+
+  <!-- Multimedia Support Example -->
+  <section>
+    <h2>HTML5 Video Support</h2>
+    <video width="320" height="240" controls>
+      <source src="movie.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Form Enhancements Example -->
+  <section>
+    <h2>Form with HTML5 Features</h2>
+    <form action="#">
+      Enter FullName: <input type="text" name="fname" required><br><br>
+      Enter Email: <input type="email" name="email" required><br><br>
+      Enter Password: <input type="password" name="pwd" required><br><br>
+
+      Select Skills:
+      <input type="checkbox" name="s1">Java &nbsp;
+      <input type="checkbox" name="s2">.NET &nbsp;
+      <input type="checkbox" name="s3">Python<br><br>
+
+      Select Gender:
+      <input type="radio" name="gender" value="male">Male &nbsp;
+      <input type="radio" name="gender" value="female">Female<br><br>
+
+      Select City:
+      <select name="city">
+        <option value="Banglore">Banglore</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Pune">Pune</option>
+      </select><br><br>
+
+      Address:
+      <textarea name="adr" cols="20" rows="5"></textarea><br><br>
+
+      Date of Birth:
+      <input type="date" name="dob"><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <!-- Web Storage API Example -->
+  <section>
+    <h2>Web Storage Example</h2>
+    <script>
+      localStorage.setItem("username", "user123");
+      sessionStorage.setItem("cart", JSON.stringify(["item1", "item2"]));
+    </script>
+    <p>Check console to see localStorage and sessionStorage usage.</p>
+  </section>
+
+  <!-- Canvas API Example -->
+  <section>
+    <h2>Canvas Drawing</h2>
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+    <script>
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = "red";
+      ctx.fillRect(10, 10, 50, 50);
+    </script>
+  </section>
+
+  <!-- Geolocation API Example -->
+  <section>
+    <h2>Geolocation API</h2>
+    <script>
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        console.log("Geolocation is not supported by this browser.");
+      }
+
+      function showPosition(position) {
+        console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
+      }
+    </script>
+    <p>Open console to see your location coordinates.</p>
+  </section>
+
+  <!-- WebSocket Example -->
+  <section>
+    <h2>WebSocket Example</h2>
+    <script>
+      const ws = new WebSocket('ws://example.com:8080');
+      ws.onmessage = (event) => {
+        console.log('Message from server: ', event.data);
+      };
+    </script>
+    <p>WebSocket initialized (check browser console for messages).</p>
+  </section>
+
+</body>
+</html>
