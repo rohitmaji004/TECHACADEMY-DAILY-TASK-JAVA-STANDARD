@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Task</title>
+</head>
+<body>
+    <div class="article">
+    <h2>The assignment</h2>
+    <h2>Exercise 1: Check if Number is Positive, Negative, or Zero (num=-5)</h2>
+    <p id="exercise1"></p>
+     <h2>Exercise 2: Compare Two Numbers(num1=10, num2=20)</h2>
+     <p id="exercise2"></p>
+     <h2>Exercise 3: Arithmetic Operations(n1=15,n2=4)</h2>
+     <p id="exercise3"></p>
+      <h2>Exercise 4: Fizz task</h2>
+     <p id="exercise4"></p>
+       <h2>Exercise 5: Factorial task (5!)</h2>
+     <p id="exercise5"></p>
+        <h2>Exercise 6: Palindrome task (noon)</h2>
+     <p id="exercise6"></p>
+            <h2>Exercise 7: sort task ([3, 1, 4, 1, 5, 9, 2])</h2>
+     <p id="exercise7"></p>
+       <h2>Exercise 8: Largest/smallest task ([7, 2, 10, 4, 8])</h2>
+     <p id="largestResult"></p>  <p id="smallestResult"></p>
+      <h2>Exercise 9: Todo list</h2>
+    <div id="exercise9"></div>
+    <input type="text" id="newTaskInput" placeholder="Enter task name" style="padding: 0.3em 0.3em; width: 30%;" />
+<button onclick="addTask()" style="width: 10em; background-color: #252525; color: #f5f5f5; padding: 0.5em 0.5em;">Add Task</button>
+<h2>Exercise 10: Calculator</h2>
+<div id="exercise10"></div>
+<input type="text" id="one" placeholder="Enter First number" style="width: 20%;" />
+<input type="text" id="two" placeholder="Enter second number" style="width: 20%;" />
+<div style="display: flex; align-items: center; gap: 0.5em;">
+    <button id="add" style="border-radius: 50%;padding: 1em 1em; background-color: #252525; color: #f5f5f5; cursor: pointer;">+</button>
+     <button id="sub" style="border-radius: 50%;padding: 1em 1em; background-color: #252525; color: #f5f5f5; cursor: pointer;">-</button>
+      <button id="mul" style="border-radius: 50%;padding: 1em 1em; background-color: #252525; color: #f5f5f5; cursor: pointer;">*</button>
+       <button id="div" style="border-radius: 50%;padding: 1em 1em; background-color: #252525; color: #f5f5f5; cursor: pointer;">/</button>
+    </div>
+    <p id="ex10display"></p>
+  </div>
+  
+</body>
+<script>
+    //     Write a program that checks if a number is positive, negative, or zero. Use an if-else statement.
+// Example Input: number = -5
+// Expected Output: The number is negative.
+
+
+    let number = -5;
+    let ex1Result = "";
+    if (number > 0) {
+      ex1Result = "The Number is Positive";
+    } else if (number < 0) {
+      ex1Result = "The Number is Negative";
+    } else {
+      ex1Result = "The Number is zero";
+    }
+    document.getElementById("exercise1").innerText = ex1Result;
+// Exercise 2: Comparison Operators
+// Write a program that compares two numbers and prints whether the first number is greater than, less than, or equal to the second number.
+// Example Input: num1 = 10, num2 = 20
+// Expected Output: 10 is less than 20.
+
+    let num1 = 10;
+    let num2 = 20;
+    let ex2Result = "";
+    if (num1 > num2) {
+      ex2Result = `${num1} is greater than ${num2}`;
+    } else if (num1 < num2) {
+      ex2Result = `${num1} is less than ${num2}`;
+    } else {
+      ex2Result = `${num1} is equal to ${num2}`;
+    }
+    document.getElementById("exercise2").innerText = ex2Result;
+// EX3 Arithmetic Operations
+// Create a program that takes two numbers as input and performs the following operations: addition, subtraction, multiplication, division, and modulus. Print the results.
+// Example Input: num1 = 15, num2 = 4
+// Expected Output:
+//  Addition: 19
+// Subtraction: 11
+// Multiplication: 60
+// Division: 3.75
+// Modulus: 3
+
+ let n1 = 15;
+ let n2 = 4;
+ let ex3Result = `
+Addition: ${n1 + n2} <br>
+Subtraction: ${n1 - n2} <br>
+Multiplication: ${n1 * n2} <br>
+Division: ${n1 / n2} <br>
+Modulus: ${n1 % n2}
+    `;
+document.getElementById("exercise3").innerHTML = ex3Result;
+
+
+// Exercise 1: FizzBuzz Challenge
+// Write a program that prints numbers from 1 to 100.
+ 
+// If a number is divisible by 3,     print "Fizz" instead. 
+// If a number is divisible by 5,     print "Buzz" instead. 
+// If a number is divisible by     both 3 and 5, print "FizzBuzz".
+// Example Output (Partial):
+// 1
+// 2
+// Fizz
+// 4
+// Buzz
+// Fizz
+
+
+var num = 1;
+var ex4result = "";
+
+while (num <= 100) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    ex4result += "FizzBuzz<br>";  
+  } else if (num % 3 === 0) {
+    ex4result += "Fizz<br>";
+  } else if (num % 5 === 0) {
+    ex4result += "Buzz<br>";
+  } else {
+    ex4result += num + "<br>";
+  }
+  num++;
+}
+document.getElementById("exercise4").innerHTML = ex4result;
+// Exercise 2: Factorial Function Using Recursion
+// Write a function that calculates the factorial of a given number using recursion. (Factorial of n is the product of all positive integers up to n. Example: 5! = 5 × 4 × 3 × 2 × 1 = 120)
+var ex5result =""
+function factorial(n){
+    if(n ==0 || n == 1){
+        return 1;
+    } 
+    return n * factorial(n-1);
+}
+
+var factn = 5;
+var ex5result = factorial(factn);
+
+
+
+document.getElementById("exercise5").innerHTML = ex5result;
+
+
+// Checker
+// Write a function that checks if a given string is a palindrome (reads the same forward and backward).
+
+function palindrome(s){
+  let left =0 ; let right = s.length -1;
+  while (left < right) {
+    if (s[left] !== s[right]) {
+      return false; 
+    }
+    left++;
+    right--;
+  }
+  return true; 
+}
+let assign ="noon";
+var ex6result = palindrome(assign);
+if(ex6result){
+    ex6result = "It is a palindrome";
+} else {
+      ex6result = "It is not a palindrome";
+}
+
+document.getElementById("exercise6").innerHTML = ex6result;
+
+
+// Exercise 4: Sorting an Array
+// Write a function that sorts an array of numbers in ascending order without using .sort().
+// Example Input: [3, 1, 4, 1, 5, 9, 2]
+// Expected Output: [1, 1, 2, 3, 4, 5, 9]
+
+function sortArray(arr) {
+  let n = arr.length;
+
+ 
+for (let i = 0; i < n - 1; i++) {
+for (let j = 0; j < n - i - 1; j++) {
+    if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+
+  return arr;
+}
+
+// Example input
+let inarr = [3, 1, 4, 1, 5, 9, 2];
+let ex7result = sortArray(inarr);
+document.getElementById("exercise7").innerHTML = ex7result;
+
+
+// Exercise 5: Find the Largest and Smallest Number in an Array
+// Write a function that takes an array of numbers and finds the largest and smallest values.
+// Example Input: [7, 2, 10, 4, 8]
+// Expected Output:
+// Largest: 10
+// Smallest: 2
+
+function largest(arr){
+let large = arr[0]
+for(let i = 0 ; i<= arr.length-1 ; i++){
+    if(large < arr[i]){
+        large = arr[i];
+    }
+}
+  return large;
+}
+function smallest(arr){
+    let small = arr[0]
+for(let i = 0 ; i<= arr.length-1 ; i++){
+    if(small > arr[i]){
+        small = arr[i];
+    }
+}
+  return small;
+}
+
+
+let lsarr = [7, 2, 10, 4, 8]
+document.getElementById("largestResult").innerHTML = "Largest: " + largest(lsarr);
+document.getElementById("smallestResult").innerHTML = "Smallest: " + smallest(lsarr);
+
+// Exercise 6: Implementing a Simple To-Do List Using Objects
+// Create an array of to-do objects, where each object contains:
+ 
+// A task name 
+// A status ("pending"     or "completed")
+// Write functions to:
+// 1.     Add a new task.
+// 2.     Mark a task as completed.
+// 3.     Display all tasks.
+const ex9html = document.getElementById("exercise9");
+let todoarr = [
+    {taskname: "assignments", status:"pending" },
+     {taskname: "VILT Session", status:"pending" },
+      {taskname: "Task", status:"pending" },
+       {taskname: "Trutime", status:"pending" },
+        {taskname: "Timesheet", status:"pending" }
+]
+function addTask() {
+    const input = document.getElementById("newTaskInput");
+    const taskName = input.value.trim();
+    if (taskName !== "") {
+        todoarr.push({ taskname: taskName, status: "pending" });
+        input.value = "";
+        displayTasks();
+    }
+}
+function completedtask(taskname){
+todoarr.forEach((item) => {
+    if(item.taskname === taskname){
+        item.status ="completed"
+    }
+})
+ displayTasks();
+}
+function displayTasks() {
+     ex9html.innerHTML = ""; 
+    todoarr.forEach((item) => {
+        ex9html.innerHTML += `
+        <ul>
+        <li>
+            ${item.taskname} - <strong>${item.status}</strong>
+            ${item.status === "pending" ? `<button onclick="completedtask('${item.taskname}')">Mark as Completed</button>` : ""}
+        </li>
+        </ul>
+        `;
+    });
+}
+displayTasks();
+
+
+// Exercise 7: Using the switch Statement for a Simple Calculator
+// Write a JavaScript program that asks the user for two numbers and an operation (+, -, *, /) and then calculates the result using a switch statement.
+const add = document.getElementById("add");
+const sub = document.getElementById("sub");
+const mul = document.getElementById("mul");
+const div = document.getElementById("div");
+const one = document.getElementById("one");
+const two = document.getElementById("two");
+let cal;
+
+
+function calculate(operation) {
+    const numberone = parseFloat(one.value.trim());
+    const numbertwo = parseFloat(two.value.trim());
+    let ex10result = ""; 
+    switch(operation) {
+        case 'add':
+            ex10result += numberone + numbertwo;
+            console.log(ex10result);
+            
+            break;
+        case 'sub':
+            ex10result += numberone - numbertwo;
+              console.log(ex10result);
+            break;
+        case 'mul':
+            ex10result += numberone * numbertwo;
+              console.log(ex10result);
+            break;
+        case 'div':
+            if (numbertwo === 0) {
+                ex10result = "Cannot divide by zero!"
+                return;
+            }
+            ex10result += numberone / numbertwo;
+              console.log(ex10result);
+            break;
+        default:
+            ex10result = "Invalid operation";
+    }
+     document.getElementById("ex10display").innerText = `Result: ${ex10result}`;
+}
+
+add.addEventListener("click", () => calculate('add'));
+sub.addEventListener("click", () => calculate('sub'));
+mul.addEventListener("click", () => calculate('mul'));
+div.addEventListener("click", () => calculate('div'));
+
+
+//1 Create a Calculator Function
+// Develop a function that performs basic arithmetic operations (addition, subtraction, multiplication, division).
+function adding(a, b){
+    return a+b;
+}
+
+function subtr(a, b){
+    return a-b;
+}
+function multi(a, b){
+    return a*b;
+}
+function divi(a, b){
+    return a/b;
+}
+
+console.log(adding(8,5));
+console.log(subtr(8,5));
+console.log(multi(8,5));
+console.log(divi(8,5));
+
+
+//2 Build a Task Reminder System
+// Implement a function that sets up reminders for different tasks.
+// The function should accept a task name and deadline, displaying a reminder message.
+function taskre(task){
+ task.forEach(cand => {
+   console.log( `Reminder of ${cand.name} is ${cand.deadline}`);
+   });
+}
+
+taskre([{name:"Faizan" , deadline:"06th June"} , {name:"Maaz" , deadline:"07th June"}, {name:"Akram" , deadline:"08th June"}, {name:"Roh" , deadline:"09th June"}]);
+
+
+//3 Employee Profile Generator
+// Develop a function that sets default job titles when none are provided.
+// This ensures employees always have a designation.
+function profilegen(name, designation="Software Engineer"){
+  return{
+    name:name,
+    designation:designation
+  }
+}
+ console.log(profilegen("Faizan" , "Java Developer"));
+  console.log(profilegen("Akram"));
+//4 Create a Personalized Email Template
+// Write a function that generates a customized email message for employees.
+// The function should accept parameters like name, department, and joining date.
+// generateEmail(name, department, date)
+// output: 
+// Dear xxxx,
+
+// Welcome to the xxxxx team! Your joining date is xxxx.
+function Emailsender(employee){
+   employee.forEach(person => {
+    console.log(
+` Dear ${person.name},
+           
+ Welcome to the ${person.department} team! Your joining date is ${person.Joining_date}`
+    );
+    
+   })
+}
+
+Emailsender([{name:"Faizan", department:"Java Course", Joining_date:"13th May, 2025"} , {name:"Maaz", department:"Azure Course", Joining_date:"13th May, 2025"} , {name:"Akram", department:"System Engineer Course", Joining_date:"15th May, 2025"} , {name:"Rohit", department:"AI/ml Course", Joining_date:"16th May, 2025"}])
+
+//5 Create a function that sets default preferences for language, theme, and notifications.
+
+// If no values are provided, defaults are applied.
+function preferences(language="Java", Theme="Software Engineer", notifications="You're enrolled in this course"){
+  return{
+    language:language,
+    Theme:Theme,
+    notifications:notifications
+  }
+}
+ console.log(preferences("Javascript" , "Full Stack developer" , "You're enrolled in this course"));
+  console.log(preferences());
+
+//6 Dynamic Meeting Scheduler
+// Create an array to store meeting participants.
+
+// Add new members dynamically and display the list.
+const participantsarray = ["FAIZAN" , "ROHIT", "KISHOR"];
+    console.log("Particpants list: ", participantsarray);
+function addmember(name){
+    participantsarray.push(name);
+    console.log(`Updated participants list: ${name} `,  participantsarray);
+    
+}
+
+addmember("ALI");
+addmember("AKRAM,");
+addmember("ROH");
+//7 Manage Office Supplies Inventory
+// Maintain an array with office supplies stock.
+
+// Allow users to add and remove supplies, tracking the list dynamically.
+
+ const stockarray=["Inventory" , "Files" , "Notepad"]
+ console.log("List of inventory : ", stockarray);
+ 
+function addstock(item){
+    stockarray.push(item);
+    console.log(`Updated Inventory list with adding: ${item} `,  stockarray);
+}
+function removestock(item){
+      const index = stockarray.indexOf(item);
+  if (index !== -1) {
+    stockarray.splice(index, 1); 
+    console.log(`Updated Inventory list after deleting: ${item}`, stockarray);
+  } else {
+    console.log(`Item "${item}" not found in inventory.`);
+  }
+}
+addstock("Desktop");
+addstock("CPU");
+addstock("Printer");
+addstock("Laptops")
+removestock("Printer")
+removestock("Notepad")
+//8 Employee Management Dashboard
+// Objective:
+
+// Store employee details in arrays, including names, roles, and salaries.
+
+// Use functions, default arguments, and array methods to manage employees dynamically.
+
+// Apply scope rules to restrict sensitive salary data access.
+
+function manageEmployee(employees) {
+  // Private scope for salary data
+  const salaryData = employees.map(emp => emp.salaries);
+// 
+
+  const publicInfo = employees.map(emp => {
+    return {
+      name: emp.name,
+      role: emp.role
+    
+    };
+  });
+
+  console.log("Employee List (Name & Role Only):");
+  console.table(publicInfo);
+
+
+  function showAllSalaries() {
+    console.log("Salaries (Authorized Access):", salaryData);
+  }
+
+  function addEmployee(name, role, salaries = "30k/month") {
+    employees.push({ name, role, salaries });
+    salaryData.push(salaries);
+    console.log(`Added: ${name} as ${role} with ${salaries}`);
+  }
+
+  function removeEmployee(name) {
+    const index = employees.findIndex(emp => emp.name === name);
+    if (index !== -1) {
+      const removed = employees.splice(index, 1)[0];
+      salaryData.splice(index, 1);
+      console.log(`Removed: ${removed.name}`);
+    } else {
+      console.log(`Employee "${name}" not found.`);
+    }
+  }
+
+  addEmployee("Neha", "Frontend Developer");
+  removeEmployee("Maaz");
+
+  console.log("Final Employee List:");
+  console.table(employees.map(({ name, role, salaries }) => ({ name, role, salaries })));
+
+}
+manageEmployee([{ name: "Faizan", role: "Java Developer", salaries: "50k/month" },{ name: "Maaz", role: "Azure Developer", salaries: "50k/month" },{ name: "Akram", role: "System Engineer", salaries: "30k/month" },{ name: "Rohit", role: "AI/ml", salaries: "50k/month" }
+]);
+
+
+
+//9 console.log(companyName); // What will happen? companyName is undefned
+// var companyName = "InnovateX"; 
+// console.log(companyName);// What will happen? Innovatex
+
+
+//10 Will this work or will get error: no error with the company as it is globally scoped
+// let company = "TechCorp"; 
+// function employeeRole() {
+//     let role = "Software Engineer"; 
+//     console.log(`Company: ${company}, Role: ${role}`);
+// }
+// employeeRole();
+// console.log(role); role is not defined
+
+</script>
+</html>
