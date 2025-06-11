@@ -1,0 +1,72 @@
+
+mkdir git-demo-project
+cd git-demo-project
+git init
+> We create a new project and initialize it as a Git repository.
+
+echo "Initial content in main branch" > feature.txt
+git add feature.txt
+git commit -m "Initial commit on main branch"
+> The main branch has one file: 'feature.txt' with base content.
+
+
+git checkout -b feature-branch
+echo "Added new feature from feature-branch" >> feature.txt
+git add feature.txt
+git commit -m "Added new feature"
+> We create a new branch and enhance 'feature.txt' with feature-related changes.
+
+
+git checkout main
+echo "Conflicting change from main branch" >> feature.txt
+git add feature.txt
+git commit -m "Conflicting change on main branch"
+> Now both branches have modified the same file, causing a conflict.
+
+
+git merge feature-branch
+> Git halts with a conflict message — we must resolve it manually.
+
+
+# Edit feature.txt manually to resolve
+git add feature.txt
+git commit -m "Resolved merge conflict"
+> We’ve now combined both changes and committed the resolution.
+
+
+git diff HEAD~1 HEAD
+> Shows the difference between the latest commit and the one before it.
+
+
+echo "Temporary changes not ready to commit" > temp.txt
+git add temp.txt
+git stash
+> We packed our unfinished work and put it aside.
+
+
+git stash list
+git stash pop
+> We apply our stashed changes back to your working directory.
+
+
+echo "Another change" > another.txt
+git stash
+> We stash another change, creating multiple stash entries.
+
+
+git stash list
+git stash apply stash@{1}
+> We selectively bring back a previous stash.
+
+
+git stash clear
+> Clears the stash list.
+
+Final File Structure:
+---------------------
+ls
+# Output:
+# feature.txt
+# temp.txt
+# another.txt
+
